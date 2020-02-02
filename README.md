@@ -1,20 +1,30 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# References Terraform
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+* [Specifying a Required Terraform Version](https://www.terraform.io/docs/configuration/terraform.html#specifying-required-provider-versions)
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+* [TFVARS](https://learn.hashicorp.com/terraform/getting-started/variables.html)
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+# Commands Az
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+List Locations Azure
+
+ ```
+ az account list-locations --query "[].{Name: name, DisplayName: displayName}" -o table
+ ```
+
+ List WebApps
+
+ ```
+az webapp list --resource-group my-rg --output table
+ ```
+
+
+ # Commands Terraform
+
+Use TFVARS for change default variables
+
+```
+terraform plan -var-file="region.tfvars" 
+terraform apply -var-file="region.tfvars" 
+
+  ```
